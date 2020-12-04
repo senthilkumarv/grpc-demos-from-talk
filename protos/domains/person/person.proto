@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package domains.person;
+
+option java_package = "com.kroger.domains.person";
+
+import "domains/person/phone_number.proto";
+
+message Person {
+	int32 id = 1;
+	string first_name = 2;
+	string last_name = 3;
+	string email = 4;
+	string title = 7;
+	repeated domains.person.PhoneNumber phone_numbers = 5;
+	bool active = 6;
+}

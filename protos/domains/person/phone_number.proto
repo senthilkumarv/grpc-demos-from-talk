@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package domains.person;
+
+option java_package = "com.kroger.domains.person";
+
+import "domains/person/phone_type.proto";
+
+message PhoneNumber {
+	domains.person.PhoneType phone_type = 1;
+	string number = 2;
+}

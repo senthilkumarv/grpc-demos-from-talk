@@ -1,0 +1,16 @@
+export PATH=$PATH:/Users/thw5667/Desktop/grpc-java/compiler/build/exe/java_plugin
+protoc --proto_path=. --java_out=java **/*proto
+protoc --plugin=protoc-protoc-gen-grpc-java --grpc-java_out=java --java_out=java --proto_path=. **/*proto
+
+export PATH=$PATH:/Users/thw5667/Desktop/grpc-node/packages/grpc-tools/build/bin/
+
+protoc --js_out=import_style=commonjs,binary:./generated --proto_path=../protos ../protos/domains/**/*proto
+
+protoc --js_out=import_style=commonjs,binary:./generated --grpc_out=./generated --plugin=protoc-gen-grpc=./node_modules/grpc-tools/bin/grpc_node_plugin --proto_path=../protos ../protos/services/**/*proto
+
+export PATH=$PATH:/Users/thw5667/kroger/grpc-swift/.build/release
+
+protoc **/*proto --proto_path=. --plugin=protoc-gen-swift --swift_opt=Visibility=Public --swift_out=swift --plugin=./.build/debug/protoc-gen-grpc-swift --grpc-swift_opt=Visibility=Public --grpc-swift_out=swift
+
+protoc -I ./protos/ ./protos/**/*proto --swift_opt=Visibility=Public --swift_out=./person-demo/person-demo/generated --grpc-swift_out=Client=true,Server=true,Visibility=Public:./person-demo/person-demo/generated
+

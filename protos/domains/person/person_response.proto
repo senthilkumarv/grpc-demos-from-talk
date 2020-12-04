@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package domains.person;
+
+option java_package = "com.kroger.domains.person";
+
+import "domains/person/person.proto";
+import "domains/common/error.proto";
+
+message PersonResponse {
+	oneof result {
+		domains.person.Person person = 1;
+		domains.common.Error error = 2;
+	}
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package services.person;
+
+option java_package = "com.kroger.services.person";
+
+import "domains/person/person_request.proto";
+import "domains/person/person_response.proto";
+
+service PersonService {
+    rpc FetchById(domains.person.PersonRequest) returns (domains.person.PersonResponse) {
+    }
+}

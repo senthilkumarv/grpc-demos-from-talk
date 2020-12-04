@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package domains.person;
+
+option java_package = "com.kroger.domains.person";
+
+enum PhoneType {
+	MOBILE = 0;
+	WORK = 1;
+	HOME = 2;
+}

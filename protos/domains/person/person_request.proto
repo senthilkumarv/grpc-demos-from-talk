@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package domains.person;
+
+option java_package = "com.kroger.domains.person";
+
+message PersonRequest {
+	int32 id = 1;
+}
